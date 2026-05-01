@@ -416,6 +416,7 @@ section {
   white-space: nowrap;
 
   background: linear-gradient(90deg, #c67c3a, #e07a3f);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -770,6 +771,7 @@ section {
   line-height: 1.1;
   margin: 0;
   background: linear-gradient(90deg, #eae7e2, #c67c3a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
