@@ -1,0 +1,22 @@
+.map {
+  /* FIX: removed min-height: 100vh and margin/scroll-margin hacks */
+  display: flex;           /* FIX: flex-center content within the 100vh card */
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;       /* FIX: clear fixed header */
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 60px 40px;
+  position: relative;
+  height: 100%;
+
+  background-image: url('/map.svg');
+  background-size: cover;
+  background-position: center 50%;   /* shifts map up slightly so less is cropped */
+  background-repeat: no-repeat;
+  background-color: #0b0b0b;
+}
