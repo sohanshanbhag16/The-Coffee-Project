@@ -3,6 +3,11 @@
 
 /* BASE */
 
+:root {
+  /* Fixed `.header`; history sticky + scroll alignment use the same inset */
+  --site-header-offset: 84px;
+}
+
 /* Chrome, Safari */
 body::-webkit-scrollbar {
   display: none;
@@ -10,7 +15,7 @@ body::-webkit-scrollbar {
 body {
   margin: 0;
   background: radial-gradient(circle at center, #2b140a 0%, #0b0b0b 70%);
-  color: #eae7e2;
+  color: #eae7e2; 
   font-family: 'Inter', sans-serif;
   overflow: hidden; /* FIX: prevent body from being a second scroll container */
 }
@@ -21,6 +26,7 @@ body {
   overflow-y: scroll;             /* FIX: this is the ONE scroll container */
   scroll-snap-type: y mandatory;  /* FIX: enable snap */
   scrollbar-width: none;
+  overflow-anchor: none;
 }
 
 .page::-webkit-scrollbar {
@@ -271,75 +277,4 @@ section {
   width: 28px;
   text-align: right;
   flex-shrink: 0;
-}
-
-/* for history */
-.history {
-  /* FIX: removed min-height: 90vh — section handles height exactly */
-  /* FIX: removed scroll-margin-top — not needed with snap scrolling */
-  display: flex;           /* FIX: flex-center content within the 100vh card */
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 80px;       /* FIX: clear fixed header without margin hacks */
-}
-
-.history .builder-tagline {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    margin-top: 10px;
-    padding: 0px 20px;
-    color: #c67c3a;
-    letter-spacing: 6px;
-    z-index: 10;
-}
-
-.history .builder-caption-1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-top: 24px;
-    padding: 0px 20px;
-    color: #eae7e2;
-    z-index: 10;
-    line-height: 0.1;
-}
-
-.history .builder-caption-2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-top: 16px;
-    z-index: 10;
-    padding: 0px 20px;
-    color: #b8b3ac;
-    max-width: 600px;
-}
-
-.history-section {
-  height: 400vh; /* temp scroll space */
-}
-
-.history-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden; /* 🔥 hides other cards */
-}
-
-.history-track {
-  display: flex;
-  height: 100%;
-}
-
-.history-card {
-  width: 100vw;   /* 🔥 one card per screen */
-  height: 100vh;
-
-  flex-shrink: 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: #111;
-  color: white;
 }

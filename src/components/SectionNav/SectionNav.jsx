@@ -1,6 +1,6 @@
 import "./SectionNav.css";
 
-const SECTIONS = ["hero", "builder", "map", "history"];
+const SECTIONS = ["hero", "builder", "map", "history", "contact"];
 
 const SectionNav = ({ active, onNav }) => (
     <div className="section-nav">
